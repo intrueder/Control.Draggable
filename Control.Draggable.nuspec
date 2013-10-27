@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>intrueder</authors>
+    <owners>intrueder</owners>
+    <projectUrl>https://github.com/intrueder/Control.Draggable</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Makes any WinForms control draggable</description>
+    <releaseNotes>Initial package.</releaseNotes>
+    <copyright>Copyright 2013</copyright>
+    <tags>WinForms Control Extension Draggable</tags>
+  </metadata>
+</package>
