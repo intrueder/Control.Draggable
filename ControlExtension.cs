@@ -1,22 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Windows.Forms;
-
-namespace DraggableControls
+﻿namespace System.Windows.Forms
 {
+	using System;
+	using System.Collections.Generic;
+	using System.Windows.Forms;
+	using System.Drawing;
+
     public static class ControlExtension
     {
         // TKey is control to drag, TValue is a flag used while dragging
         private static Dictionary<Control, bool> draggables = 
                    new Dictionary<Control, bool>();
-        private static System.Drawing.Size mouseOffset;
+        private static Size mouseOffset;
  
         /// <summary>
         /// Enabling/disabling dragging for control
         /// </summary>
-        public static void Draggable(this Control control, bool Enable)
+        public static void Draggable(this Control control, bool enable)
         {
-            if (Enable)
+            if (enable)
             {
                 // enable drag feature
                 if (draggables.ContainsKey(control))
@@ -48,7 +49,7 @@ namespace DraggableControls
 
         static void control_MouseDown(object sender, MouseEventArgs e)
         {
-            mouseOffset = new System.Drawing.Size(e.Location);
+            mouseOffset = new Size(e.Location);
             // turning on dragging
             draggables[(Control)sender] = true;
         }
@@ -65,7 +66,7 @@ namespace DraggableControls
             if (draggables[(Control)sender] == true)
             {
                 // calculations of control's new position
-                System.Drawing.Point newLocationOffset = e.Location - mouseOffset;
+                Point newLocationOffset = e.Location - mouseOffset;
                 ((Control)sender).Left += newLocationOffset.X;
                 ((Control)sender).Top += newLocationOffset.Y;
             }
